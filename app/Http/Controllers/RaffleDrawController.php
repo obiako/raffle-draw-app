@@ -9,11 +9,15 @@ class RaffleDrawController extends Controller
 {
     public function draw(Request $request)
     {
+        try{
         $raffle = (new CalculateRaffleWinner())
         ->fibonacci()
         ->selectRaffleWinners()
         ->saveRaffleWinners();
         return response($raffle->raffleWinners,201);
+        }catch(\Exception $exception){
+            return response(['message'=>'Exception encountered.'],500);
+        }
     }
 
     public function checkRaffleNumber(Request $request)
@@ -22,6 +26,7 @@ class RaffleDrawController extends Controller
             'number'=>'required|integer',
             'country'=>'required|string'
         ]);
+        try{
         $raffle = (new CalculateRaffleWinner())
         ->fibonacci()
         ->checkIfNumberisValid($request->number)
@@ -41,6 +46,9 @@ class RaffleDrawController extends Controller
             return response(['message'=>'Congratulations!!! You have won '.$raffle->currency.' '.$raffle->prizeInLocal],201);
         }else{
             return response(['message'=>'Sorry! You have not won'],201);
+        }
+        }catch(\Exception $exception){
+            return response(['message'=>'Exception encountered. Please Check the spelling of the country','exception'=>$exception->getMessage()],500);
         }
     }
 }
