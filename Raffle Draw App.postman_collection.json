@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "fed04037-2064-41d1-aae8-a51afe668b9f",
+		"name": "Raffle Draw App",
+		"description": "This is a collection that lets you test the raffle draw app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/raffle-draw-app/public/api/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|yfj2KkrBet0Mu2rotQVLVMNVOV7fV0IjGde8XPMl1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Tobechukwu",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "obiakotobe@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Root1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/raffle-draw-app/public/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"raffle-draw-app",
+						"public",
+						"api",
+						"register"
+					]
+				},
+				"description": "Register Route for Raffle Draw App"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/raffle-draw-app/public/api/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|yfj2KkrBet0Mu2rotQVLVMNVOV7fV0IjGde8XPMl1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "obiakotobe@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Root1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/raffle-draw-app/public/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"raffle-draw-app",
+						"public",
+						"api",
+						"login"
+					]
+				},
+				"description": "Login Route for Raffle Draw App"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/raffle-draw-app/public/api/draw",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|VBdEov6SmwGHm9yOozl1TccdT2AfnFNddsWkZmoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Tobechukwu",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "obiakotobe@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Root1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/raffle-draw-app/public/api/draw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"raffle-draw-app",
+						"public",
+						"api",
+						"draw"
+					]
+				},
+				"description": "Simulate Raffle Draw Route"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/raffle-draw-app/public/api/check_number?number=21&country=Germany",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|VBdEov6SmwGHm9yOozl1TccdT2AfnFNddsWkZmoF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Tobechukwu",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "obiakotobe@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Root1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/raffle-draw-app/public/api/check_number?number=21&country=Germany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"raffle-draw-app",
+						"public",
+						"api",
+						"check_number"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "21"
+						},
+						{
+							"key": "country",
+							"value": "Germany"
+						}
+					]
+				},
+				"description": "Check if user won Raffle draw route"
+			},
+			"response": []
+		}
+	]
+}
