@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RaffleDrawController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('/register',[UserController::class,'register']);
-Route::post('/login',[UserController::class,'login']);
+Route::post('/register',[AuthController::class,'register']);
+Route::post('/login',[AuthController::class,'login']);
 Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('/logout',[UserController::class,'logout']);
+    Route::post('/draw',[RaffleDrawController::class,'draw']);
+    Route::post('/check_number',[RaffleDrawController::class,'checkRaffleNumber']);
    
 });
 
